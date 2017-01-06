@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.dr.model.Funding" table="funding">
+		<id name="xmmc" type="java.lang.String">
+			<column name="xmmc" />
+			<generator class="assigned" />
+		</id>
+		<property name="je1" type="java.lang.String"><column name="je1" /></property>
+		<property name="zgck1" type="java.lang.String"><column name="zgck1" /></property>
+		<property name="gjbz1" type="java.lang.String"><column name="gjbz1" /></property>
+		<property name="hzzc1" type="java.lang.String"><column name="hzzc1" /></property>
+		<property name="bksj1" type="java.util.Date"><column name="bksj1" /></property>
+		<property name="bz1" type="java.lang.String"><column name="bz1" /></property>
+		<property name="je2" type="java.lang.String"><column name="je2" /></property>
+		<property name="zgck2" type="java.lang.String"><column name="zgck2" /></property>
+		<property name="gjbz2" type="java.lang.String"><column name="gjbz2" /></property>
+		<property name="hzzc2" type="java.lang.String"><column name="hzzc2" /></property>
+		<property name="bksj2" type="java.util.Date"><column name="bksj2" /></property>
+		<property name="bz2" type="java.lang.String"><column name="bz2" /></property>
+		<property name="je3" type="java.lang.String"><column name="je3" /></property>
+		<property name="zgck3" type="java.lang.String"><column name="zgck3" /></property>
+		<property name="gjbz3" type="java.lang.String"><column name="gjbz3" /></property>
+		<property name="hzzc3" type="java.lang.String"><column name="hzzc3" /></property>
+		<property name="bksj3" type="java.util.Date"><column name="bksj3" /></property>
+		<property name="bz3" type="java.lang.String"><column name="bz3" /></property>
+		<property name="je4" type="java.lang.String"><column name="je4" /></property>
+		<property name="zgck4" type="java.lang.String"><column name="zgck4" /></property>
+		<property name="gjbz4" type="java.lang.String"><column name="gjbz4" /></property>
+		<property name="hzzc4" type="java.lang.String"><column name="hzzc4" /></property>
+		<property name="bksj4" type="java.util.Date"><column name="bksj4" /></property>
+		<property name="bz4" type="java.lang.String"><column name="bz4" /></property>
+		
+	</class>
+</hibernate-mapping>

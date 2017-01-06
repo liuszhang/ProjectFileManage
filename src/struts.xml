@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.maxSize" value="600000000"/> 
+
+	<package name="extjs" extends="json-default" namespace="/">
+		<global-results>
+			<result name="error">LogoutError.jsp</result>
+			<result name="loginpage">index.html</result>
+		</global-results>
+
+		
+		<!--***************************************************-->
+		<action name="housingReconstructionExlDataImp" class="housingReconstructionAction" method="housingReconstructionExlDataImp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="housingReconstructionExlDataExp" class="housingReconstructionAction" method="housingReconstructionExlDataExp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="delHousingReconstruction" class="housingReconstructionAction" method="delHousingReconstruction">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="saveHousingReconstruction" class="housingReconstructionAction" method="saveHousingReconstruction">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="findHousingReconstruction" class="housingReconstructionAction" method="findHousingReconstruction">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="findHRImg" class="housingReconstructionAction" method="findHRImg">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="findHRMtl" class="housingReconstructionAction" method="findHRMtl">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="maintenanceAndReinforcementExlDataImp" class="maintenanceAndReinforcementAction" method="maintenanceAndReinforcementExlDataImp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="maintenanceAndReinforcementExlDataExp" class="maintenanceAndReinforcementAction" method="maintenanceAndReinforcementExlDataExp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="delMaintenanceAndReinforcement" class="maintenanceAndReinforcementAction" method="delMaintenanceAndReinforcement">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="saveMaintenanceAndReinforcement" class="maintenanceAndReinforcementAction" method="saveMaintenanceAndReinforcement">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="findMaintenanceAndReinforcement" class="maintenanceAndReinforcementAction" method="findMaintenanceAndReinforcement">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="findMaintenanceAndReinforcementImg" class="maintenanceAndReinforcementAction" method="findMaintenanceAndReinforcementImg">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="findMaintenanceAndReinforcementMtl" class="maintenanceAndReinforcementAction" method="findMaintenanceAndReinforcementMtl">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="reconstructionExlDataImp" class="reconstructionAction" method="reconstructionExlDataImp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="reconstructionExlDataExp" class="reconstructionAction" method="reconstructionExlDataExp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="delReconstruction" class="reconstructionAction" method="delReconstruction">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="saveReconstruction" class="reconstructionAction" method="saveReconstruction">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="findReconstruction" class="reconstructionAction" method="findReconstruction">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="findReconstructionImg" class="reconstructionAction" method="findReconstructionImg">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="findReconstructionMtl" class="reconstructionAction" method="findReconstructionMtl">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="findReconstructionArchive" class="reconstructionAction" method="findReconstructionArchive">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="saveImgName" class="reconstructionAction" method="saveImgName">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="planExlDataDisplay" class="planAction" method="planExlDataDisplay">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="planSummaryExlDataDisplay" class="planAction" method="planSummaryExlDataDisplay">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="publicityExlDataDisplay" class="publicityAction" method="publicityExlDataDisplay">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="publicityReporting" class="publicityAction" method="publicityReporting">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="saveFunding" class="fundingAction" method="saveFunding">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="findFunding" class="fundingAction" method="findFunding">
+			<result type="json">
+				<!-- <param name="includeProperties">success,funding,funding.je1,funding.bksj1</param> -->
+				<!-- <param name="root">pageJson.root[0]</param> -->
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="fundingExlDataImp" class="fundingAction" method="fundingExlDataImp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="fundingExlDataExp" class="fundingAction" method="fundingExlDataExp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="fundingBatchExlDataExp" class="fundingAction" method="fundingBatchExlDataExp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="fundingBatchExlDataImp" class="fundingAction" method="fundingBatchExlDataImp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="saveReconstructionFunding" class="reconstructionFundingAction" method="saveReconstructionFunding">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="findReconstructionFunding" class="reconstructionFundingAction" method="findReconstructionFunding">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="fileDataImp" class="uploadAction" method="fileDataImp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="login" class="loginAction" method="login">
+			<result type="json">
+				<param name="includeProperties">success,message,loginurl,userRole</param>
+			</result>
+		</action>
+		<action name="getAllUsers" class="loginAction" method="findAllUsers">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		<action name="logout" class="loginAction" method="logout">
+			<result type="json">
+				<param name="includeProperties">success</param>
+			</result>
+		</action>
+		<action name="changePwd" class="loginAction" method="changePwd">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="addUser" class="loginAction" method="addUser">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="userExlDataImp" class="loginAction" method="userExlDataImp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="userExlDataExp" class="loginAction" method="userExlDataExp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="delUser" class="loginAction" method="delUser">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="getMenuStore" class="loginAction" method="getMenuStore">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="getRegionStore" class="regionAction" method="getRegionStore">
+			<result type="json">
+				<param name="root">pageJson</param>
+			</result>
+		</action>
+		
+		<!--***************************************************-->
+		<action name="oneKeyExlDataExp" class="oneKeyAction" method="oneKeyExlDataExp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		<action name="oneKeyExlDataImp" class="oneKeyAction" method="oneKeyExlDataImp">
+			<result type="json">
+				<param name="includeProperties">success,message</param>
+			</result>
+		</action>
+		
+	</package>
+
+</struts>

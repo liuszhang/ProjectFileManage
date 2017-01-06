@@ -1,0 +1,9 @@
+.printtitle {
+	text-align: center;font-size:16px;padding: 5px;font-family: "黑体"; border:solid #000 1px;
+}
+.printcontent {
+	text-align: center;font-size:12px;padding: 5px;
+}
+.printcontent td{
+	text-align: center;font-size:12px;padding: 5px; border:solid #000 1px;
+}

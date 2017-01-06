@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.dr.model.HousingReconstruction" table="housingreconstruction">
+		<id name="hbh" type="java.lang.String">
+			<column name="hbh" />
+			<generator class="assigned" />
+		</id>
+		<property name="xmmc" type="java.lang.String"><column name="xmmc" /></property>
+		<property name="dz" type="java.lang.String"><column name="dz" /></property>
+		<property name="xzmc" type="java.lang.String"><column name="xzmc" /></property>
+		<property name="cm" type="java.lang.String"><column name="cm" /></property>
+		<property name="zrcm" type="java.lang.String"><column name="zrcm" /></property>
+		<property name="hzxm" type="java.lang.String"><column name="hzxm" /></property>
+		<property name="sfzh" type="java.lang.String"><column name="sfzh" /></property>
+		<property name="jtrs" type="java.lang.String"><column name="jtrs" /></property>
+		<property name="jtll" type="java.lang.String"><column name="jtll" /></property>
+		<property name="dys" type="java.lang.String"><column name="dys" /></property>
+		<property name="sc" type="java.lang.String"><column name="sc" /></property>
+		<property name="gdmj" type="java.lang.String"><column name="gdmj" /></property>
+		<property name="jtlx" type="java.lang.String"><column name="jtlx" /></property>
+		<property name="lxhm" type="java.lang.String"><column name="lxhm" /></property>
+		<property name="sscd" type="java.lang.String"><column name="sscd" /></property>
+		<property name="cjlx" type="java.lang.String"><column name="cjlx" /></property>
+		<property name="cjhx" type="java.lang.String"><column name="cjhx" /></property>
+		<property name="cjdd" type="java.lang.String"><column name="cjdd" /></property>
+		<property name="cjfwjg" type="java.lang.String"><column name="cjfwjg" /></property>
+		<property name="sgdwmc" type="java.lang.String"><column name="sgdwmc" /></property>
+		<property name="sgfzr" type="java.lang.String"><column name="sgfzr" /></property>
+		<property name="sglxhm" type="java.lang.String"><column name="sglxhm" /></property>
+		<property name="jldwmc" type="java.lang.String"><column name="jldwmc" /></property>
+		<property name="jlfzr" type="java.lang.String"><column name="jlfzr" /></property>
+		<property name="jllxhm" type="java.lang.String"><column name="jllxhm" /></property>
+		<property name="gcjd" type="java.lang.String"><column name="gcjd" /></property>
+		<property name="yys" type="java.lang.String"><column name="yys" /></property>
+		<property name="yjg" type="java.lang.String"><column name="yjg" /></property>
+		<property name="lrndjh" type="java.lang.String"><column name="lrndjh" /></property>
+		<property name="kgsj" type="java.util.Date"><column name="kgsj" /></property>
+		<property name="sgsj" type="java.util.Date"><column name="sgsj" /></property>
+		<property name="ztz" type="java.lang.String"><column name="ztz" /></property>
+		<property name="gjbz" type="java.lang.String"><column name="gjbz" /></property>
+		<property name="qzzc" type="java.lang.String"><column name="qzzc" /></property>
+		<property name="qzcjdk" type="java.lang.String"><column name="qzcjdk" /></property>
+		<property name="qtzj1" type="java.lang.String"><column name="qtzj1" /></property>
+		<property name="qtzj2" type="java.lang.String"><column name="qtzj2" /></property>
+		<property name="qtzj3" type="java.lang.String"><column name="qtzj3" /></property>
+		<property name="qtzj4" type="java.lang.String"><column name="qtzj4" /></property>
+				
+		
+	</class>
+</hibernate-mapping>

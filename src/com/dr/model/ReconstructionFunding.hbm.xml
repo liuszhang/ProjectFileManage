@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.dr.model.ReconstructionFunding" table="reconstructionfunding">
+		<id name="xmmc" type="java.lang.String">
+			<column name="xmmc" />
+			<generator class="assigned" />
+		</id>
+<property name="htze1" type="java.lang.Float"><column name="htze1" /></property>
+<property name="htze2" type="java.lang.Float"><column name="htze2" /></property>
+<property name="htze3" type="java.lang.Float"><column name="htze3" /></property>
+<property name="htze4" type="java.lang.Float"><column name="htze4" /></property>
+<property name="bkje1" type="java.lang.Float"><column name="bkje1" /></property>
+<property name="bksj1" type="java.util.Date"><column name="bksj1" /></property>
+<property name="bkje2" type="java.lang.Float"><column name="bkje2" /></property>
+<property name="bksj2" type="java.util.Date"><column name="bksj2" /></property>
+<property name="bkje3" type="java.lang.Float"><column name="bkje3" /></property>
+<property name="bksj3" type="java.util.Date"><column name="bksj3" /></property>
+<property name="bkje4" type="java.lang.Float"><column name="bkje4" /></property>
+<property name="bksj4" type="java.util.Date"><column name="bksj4" /></property>
+<property name="bkje5" type="java.lang.Float"><column name="bkje5" /></property>
+<property name="bksj5" type="java.util.Date"><column name="bksj5" /></property>
+<property name="bkje6" type="java.lang.Float"><column name="bkje6" /></property>
+<property name="bksj6" type="java.util.Date"><column name="bksj6" /></property>
+<property name="bkje7" type="java.lang.Float"><column name="bkje7" /></property>
+<property name="bksj7" type="java.util.Date"><column name="bksj7" /></property>
+<property name="bkje8" type="java.lang.Float"><column name="bkje8" /></property>
+<property name="bksj8" type="java.util.Date"><column name="bksj8" /></property>
+<property name="bkje9" type="java.lang.Float"><column name="bkje9" /></property>
+<property name="bksj9" type="java.util.Date"><column name="bksj9" /></property>
+<property name="bkje10" type="java.lang.Float"><column name="bkje10" /></property>
+<property name="bksj10" type="java.util.Date"><column name="bksj10" /></property>
+<property name="bkje11" type="java.lang.Float"><column name="bkje11" /></property>
+<property name="bksj11" type="java.util.Date"><column name="bksj11" /></property>
+<property name="bkje12" type="java.lang.Float"><column name="bkje12" /></property>
+<property name="bksj12" type="java.util.Date"><column name="bksj12" /></property>
+<property name="bkje13" type="java.lang.Float"><column name="bkje13" /></property>
+<property name="bksj13" type="java.util.Date"><column name="bksj13" /></property>
+<property name="bkje14" type="java.lang.Float"><column name="bkje14" /></property>
+<property name="bksj14" type="java.util.Date"><column name="bksj14" /></property>
+<property name="bkje15" type="java.lang.Float"><column name="bkje15" /></property>
+<property name="bksj15" type="java.util.Date"><column name="bksj15" /></property>
+<property name="bkje16" type="java.lang.Float"><column name="bkje16" /></property>
+<property name="bksj16" type="java.util.Date"><column name="bksj16" /></property>
+<property name="zb1" type="java.lang.String"><column name="zb1" /></property>
+<property name="zb2" type="java.lang.String"><column name="zb2" /></property>
+<property name="zb3" type="java.lang.String"><column name="zb3" /></property>
+<property name="zb4" type="java.lang.String"><column name="zb4" /></property>
+<property name="zb5" type="java.lang.String"><column name="zb5" /></property>
+<property name="zb6" type="java.lang.String"><column name="zb6" /></property>
+<property name="zb7" type="java.lang.String"><column name="zb7" /></property>
+<property name="zb8" type="java.lang.String"><column name="zb8" /></property>
+<property name="zb9" type="java.lang.String"><column name="zb9" /></property>
+<property name="zb10" type="java.lang.String"><column name="zb10" /></property>
+<property name="zb11" type="java.lang.String"><column name="zb11" /></property>
+<property name="zb12" type="java.lang.String"><column name="zb12" /></property>
+<property name="zb13" type="java.lang.String"><column name="zb13" /></property>
+<property name="zb14" type="java.lang.String"><column name="zb14" /></property>
+<property name="zb15" type="java.lang.String"><column name="zb15" /></property>
+<property name="zb16" type="java.lang.String"><column name="zb16" /></property>
+
+		
+	</class>
+</hibernate-mapping>

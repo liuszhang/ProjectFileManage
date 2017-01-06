@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* .x-tree-icon-leaf {
+    background-image: url("images/tree/leaf.gif");
+} */
+.x-panel-header-default-horizontal-noborder {
+  padding: 9px;
+}
+.x-tab-default-top {
+  border-radius: 2px 2px 0 0;
+  padding: 6px 12px 6px;
+}
+.x-tab-bar-default-horizontal {
+  height: 32px;
+}
+#content-panel-body{
+	top: 32px !important;
+}
+.x-panel-header-default-horizontal {
+    padding: 6px 6px 7px;
+}
+.x-grid-body{
+	padding: 0 !important;
+}
+
+.x-border-layout-ct {
+    background-color: #5db0dd;
+}
+
+.x-tab-bar-default {
+    background-color: #5db0dd;
+}
+
+.x-tab-default-top, .x-tab-default-left, .x-tab-default-right {
+    border-bottom: 0 solid #1995ef;
+} 
+
+.x-tab-bar-strip-default {
+    background-color: #ADD2ED;
+    border-color: #1995ef;
+    border-style: solid;
+}

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="org.sqlite.JDBC">
+		</property>
+		<property name="url"
+			value="jdbc:sqlite::resource:dingri.db">
+		</property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					com.dr.util.SQLiteDialect
+				</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		
+		<property name="mappingResources">
+			<list>
+				<value>com/dr/model/HousingReconstruction.hbm.xml</value>
+				<value>com/dr/model/RegionCode.hbm.xml</value>
+				<value>com/dr/model/MaintenanceAndReinforcement.hbm.xml</value>
+				<value>com/dr/model/Reconstruction.hbm.xml</value>
+				<value>com/dr/model/ReconstructionFunding.hbm.xml</value>
+				<value>com/dr/model/Funding.hbm.xml</value>
+				<value>com/dr/model/User.hbm.xml</value>
+			</list>
+		</property></bean>
+		
+		
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="transactionInterceptor"		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<props>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>AccountService</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="HousingReconstructionDAO" class="com.dr.dao.impl.HousingReconstructionDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="HousingReconstructionService" class="com.dr.service.impl.HousingReconstructionServiceImpl" scope="prototype">
+		<property name="housingReconstructionDAO">
+			<ref bean="HousingReconstructionDAO"/>
+		</property>
+		<property name="validatorService">
+			<ref bean="ValidatorService" />
+		</property>
+		<property name="regionCodeService">
+			<ref bean="RegionCodeService" />
+		</property>
+	</bean>
+	<bean id="housingReconstructionAction" class="com.dr.action.HousingReconstructionAction" scope="prototype">
+		<property name="housingReconstructionService">
+			<ref bean="HousingReconstructionService" />
+		</property>
+		<property name="validatorService">
+			<ref bean="ValidatorService" />
+		</property>
+		<property name="regionCodeService">
+			<ref bean="RegionCodeService" />
+		</property>
+	</bean>
+	
+	<bean id="MaintenanceAndReinforcementDAO" class="com.dr.dao.impl.MaintenanceAndReinforcementDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="MaintenanceAndReinforcementService" class="com.dr.service.impl.MaintenanceAndReinforcementServiceImpl" scope="prototype">
+		<property name="maintenanceAndReinforcementDAO">
+			<ref bean="MaintenanceAndReinforcementDAO"/>
+		</property>
+		<property name="validatorService">
+			<ref bean="ValidatorService" />
+		</property>
+		<property name="regionCodeService">
+			<ref bean="RegionCodeService" />
+		</property>
+	</bean>
+	<bean id="maintenanceAndReinforcementAction" class="com.dr.action.MaintenanceAndReinforcementAction" scope="prototype">
+		<property name="maintenanceAndReinforcementService">
+			<ref bean="MaintenanceAndReinforcementService" />
+		</property>
+		<property name="validatorService">
+			<ref bean="ValidatorService" />
+		</property>
+		<property name="regionCodeService">
+			<ref bean="RegionCodeService" />
+		</property>
+	</bean>
+	
+	<bean id="ReconstructionDAO" class="com.dr.dao.impl.ReconstructionDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ReconstructionService" class="com.dr.service.impl.ReconstructionServiceImpl" scope="prototype">
+		<property name="reconstructionDAO">
+			<ref bean="ReconstructionDAO"/>
+		</property>
+		<property name="validatorService">
+			<ref bean="ValidatorService" />
+		</property>
+		<property name="regionCodeService">
+			<ref bean="RegionCodeService" />
+		</property>
+	</bean>
+	<bean id="reconstructionAction" class="com.dr.action.ReconstructionAction" scope="prototype">
+		<property name="reconstructionService">
+			<ref bean="ReconstructionService" />
+		</property>
+		<property name="validatorService">
+			<ref bean="ValidatorService" />
+		</property>
+		<property name="regionCodeService">
+			<ref bean="RegionCodeService" />
+		</property>
+	</bean>
+	
+	<bean id="planAction" class="com.dr.action.PlanAction" scope="prototype">
+	</bean>
+	
+	<bean id="PublicityService" class="com.dr.service.impl.PublicityServiceImpl" scope="prototype">
+		<property name="housingReconstructionDAO">
+			<ref bean="HousingReconstructionDAO"/>
+		</property>
+		<property name="reconstructionDAO">
+			<ref bean="ReconstructionDAO"/>
+		</property>
+	</bean>
+	<bean id="publicityAction" class="com.dr.action.PublicityAction" scope="prototype">
+		<property name="publicityService">
+			<ref bean="PublicityService" />
+		</property>
+	</bean>
+	
+	<bean id="FundingDAO" class="com.dr.dao.impl.FundingDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="FundingService" class="com.dr.service.impl.FundingServiceImpl" scope="prototype">
+		<property name="fundingDAO">
+			<ref bean="FundingDAO"/>
+		</property>
+		<property name="housingReconstructionDAO">
+			<ref bean="HousingReconstructionDAO"/>
+		</property>
+	</bean>
+	<bean id="fundingAction" class="com.dr.action.FundingAction" scope="prototype">
+		<property name="fundingService">
+			<ref bean="FundingService" />
+		</property>
+	</bean>
+	
+	<bean id="uploadAction" class="com.dr.action.UploadAction" scope="prototype">
+	</bean>
+	
+	<bean id="RegionCodeDAO" class="com.dr.dao.impl.RegionCodeDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="RegionCodeService" class="com.dr.service.impl.RegionCodeServiceImpl" scope="prototype">
+		<property name="regionCodeDAO">
+			<ref bean="RegionCodeDAO"/>
+		</property>
+	</bean>
+	<bean id="UserDAO" class="com.dr.dao.impl.UserDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="UserService" class="com.dr.service.impl.UserServiceImpl" scope="prototype">
+		<property name="userDAO">
+			<ref bean="UserDAO"/>
+		</property>
+	</bean>
+	<bean id="loginAction" class="com.dr.action.LoginAction" scope="prototype">
+		<property name="userService">
+			<ref bean="UserService" />
+		</property>
+		<property name="regionCodeService">
+			<ref bean="RegionCodeService" />
+		</property>
+	</bean>
+	
+	<bean id="ValidatorService" class="com.dr.service.impl.ValidatorServiceImpl">
+		<property name="housingReconstructionDAO">
+			<ref bean="HousingReconstructionDAO"/>
+		</property>
+		<property name="maintenanceAndReinforcementDAO">
+			<ref bean="MaintenanceAndReinforcementDAO"/>
+		</property>
+		<property name="reconstructionDAO">
+			<ref bean="ReconstructionDAO"/>
+		</property>
+	</bean>
+	
+	<bean id="regionAction" class="com.dr.action.RegionAction" scope="prototype">
+		<property name="regionCodeService">
+			<ref bean="RegionCodeService" />
+		</property>
+	</bean>
+	
+	<bean id="oneKeyAction" class="com.dr.action.OneKeyAction" scope="prototype">
+		<property name="housingReconstructionService">
+			<ref bean="HousingReconstructionService" />
+		</property>
+		<property name="reconstructionService">
+			<ref bean="ReconstructionService" />
+		</property>
+		<property name="maintenanceAndReinforcementService">
+			<ref bean="MaintenanceAndReinforcementService" />
+		</property>
+		<property name="fundingService">
+			<ref bean="FundingService" />
+		</property>
+	</bean>
+	
+	<bean id="ReconstructionFundingDAO" class="com.dr.dao.impl.ReconstructionFundingDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ReconstructionFundingService" class="com.dr.service.impl.ReconstructionFundingServiceImpl" scope="prototype">
+		<property name="reconstructionFundingDAO">
+			<ref bean="ReconstructionFundingDAO"/>
+		</property>
+		<property name="housingReconstructionDAO">
+			<ref bean="HousingReconstructionDAO"/>
+		</property>
+	</bean>
+	<bean id="reconstructionFundingAction" class="com.dr.action.ReconstructionFundingAction" scope="prototype">
+		<property name="reconstructionFundingService">
+			<ref bean="ReconstructionFundingService" />
+		</property>
+	</bean>
+
+	
+	</beans>
